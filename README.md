@@ -58,10 +58,10 @@ Item Weight has 1,463 blank values in both files.
 All of the following were verified by inspecting the workbook:
 
 - **Excel table** (`Table1`) as the data source for the PivotTables
-- **10 PivotTables** on `Sheet1` (sums, averages and counts)
+- **10 PivotTables** on `Dashboard Analysis` (sums, averages and counts)
 - **PivotCharts**: doughnut, bar, area and funnel charts
 - **3 slicers**: Outlet Size, Item Type, Outlet Location Type, connected to the PivotTables
-- **Dashboard layout** built from shapes, text boxes, icons and hyperlinks to `Sheet1` and the data sheet
+- **Dashboard layout** built from shapes, text boxes, icons and hyperlinks to `Dashboard Analysis` and the data sheet
 
 No macros, external data connections or worksheet formulas beyond simple cell references (`=A5`, `=A85`, etc.) were found.
 
@@ -74,7 +74,7 @@ No macros, external data connections or worksheet formulas beyond simple cell re
 
 ## KPIs
 
-Verified from the `Sheet1` PivotTable ("KPI's Requirements") and recomputed independently from the dataset.
+Verified from the `Dashboard Analysis` PivotTable ("KPI's Requirements") and recomputed independently from the dataset.
 
 | KPI | Definition | Value |
 |---|---|---|
@@ -87,7 +87,7 @@ The dataset has no currency field; the `$` symbol is only a label on the dashboa
 
 ## Key Findings
 
-All figures are PivotTable totals from `Sheet1`; percentages are of total sales (rounded).
+All figures are PivotTable totals from `Dashboard Analysis`; percentages are of total sales (rounded).
 
 | Dimension | Result |
 |---|---|
@@ -112,7 +112,7 @@ These are descriptive observations. The dataset does not show *why* the differen
 ```
 Blinkit-Sales-Analytics-Dashboard/
 ├── dashboard/
-│   └── blinkit_sales_analysis_dashboard.xlsx   # Working dashboard (Dashboard, Sheet1, BlinkIT Grocery Data)
+│   └── blinkit_sales_analysis_dashboard.xlsx   # Working dashboard (Dashboard, Dashboard Analysis, BlinkIT Grocery Data)
 ├── data/
 │   └── blinkit_sales_dataset.xlsx              # Original dataset (unchanged)
 ├── images/                                     # Icons used on the dashboard (512 x 512 PNG)
@@ -124,7 +124,7 @@ Blinkit-Sales-Analytics-Dashboard/
 | Sheet | Purpose (verified) |
 |---|---|
 | `Dashboard` | Final dashboard: KPI cards, charts and a filter panel with slicers |
-| `Sheet1` | Working sheet holding the 10 PivotTables that feed the charts, plus the KPI table. Cells `D84:E87` hold a small linked table used by the funnel chart |
+| `Dashboard Analysis` | Working sheet holding the 10 PivotTables that feed the charts, plus the KPI table. Cells `D84:E87` hold a small linked table used by the funnel chart |
 | `BlinkIT Grocery Data` | The data table (A1:M8524) |
 
 ## How to Use the Workbook
@@ -132,7 +132,7 @@ Blinkit-Sales-Analytics-Dashboard/
 1. Download [dashboard/blinkit_sales_analysis_dashboard.xlsx](dashboard/blinkit_sales_analysis_dashboard.xlsx) (use **Download raw file** on GitHub, or clone the repository).
 2. Open it in **Microsoft Excel 2016 or later** (desktop). The funnel chart and slicers are not supported in older versions, and LibreOffice or Excel Online may not display them correctly.
 3. Go to the `Dashboard` sheet and use the **Filter Panel** slicers (Outlet Size, Item Type, Outlet Location) to filter the charts.
-4. Open `Sheet1` to inspect the PivotTables, or `BlinkIT Grocery Data` to view the records.
+4. Open `Dashboard Analysis` to inspect the PivotTables, or `BlinkIT Grocery Data` to view the records.
 
 ```bash
 git clone https://github.com/Gaznavi-Sheikh/Blinkit-Sales-Analytics-Dashboard.git
@@ -144,7 +144,7 @@ git clone https://github.com/Gaznavi-Sheikh/Blinkit-Sales-Analytics-Dashboard.gi
 - The only time dimension is Outlet Establishment Year; there are no transaction dates, so trends over time cannot be analysed.
 - The dataset contains no currency, quantity or profit fields; `Sales` is analysed as given.
 - Item Weight has 1,463 blank values (not used in the dashboard).
-- The KPI table and some labels in `Sheet1`/`Dashboard` are PivotTable output and static text, so they update only when the PivotTables are refreshed.
+- The KPI table and some labels in `Dashboard Analysis`/`Dashboard` are PivotTable output and static text, so they update only when the PivotTables are refreshed.
 - No screenshot of the full dashboard is included yet.
 
 ## Future Enhancements
